@@ -1,5 +1,5 @@
-<nav class="topnav">
-  <ul>
+<nav class="sidenav">
+<ul>
     <li [hidden]="!this.loginService.logged">
       <a [routerLink] = "'/front'">Front page</a>
     </li>
@@ -12,8 +12,5 @@
     <li [hidden]="!this.loginService.logged">
       <a [routerLink] ="'/upload'">Upload</a>
     </li>
-    <li [hidden]="!this.loginService.logged">
-      <app-logout></app-logout>
-    </li>
-  </ul>
+</ul>
 </nav>

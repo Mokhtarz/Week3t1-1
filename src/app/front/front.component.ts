@@ -15,8 +15,8 @@ export class FrontComponent implements OnInit {
   constructor(private loginService: LoginService, private router: Router, private mediaService: MediaService) { }
 
   ngOnInit() {
-    if(!this.loginService.logged)
-      this.router.navigate(['login']);
+   // if(!this.loginService.logged)
+     // this.router.navigate(['login']);
 
     this.mediaService.getMedia().subscribe(
       res => {

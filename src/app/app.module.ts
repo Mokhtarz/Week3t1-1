@@ -13,6 +13,9 @@ import {RouterModule} from "@angular/router";
 import {MediaService} from "./services/media.service";
 import {LoginService} from "./services/login.service";
 import { UploadComponent } from './upload/upload.component';
+import { FooterComponent } from './footer/footer.component';
+import { SidenavComponent } from './sidenav/sidenav.component';
+
 
 const routeConfig = [
   {
@@ -39,6 +42,10 @@ const routeConfig = [
   {
     path: 'upload',
     component: UploadComponent
+  },
+  {
+    path: 'sidenav',
+    component: SidenavComponent
   }
 ];
 
@@ -50,7 +57,9 @@ const routeConfig = [
     RegisterComponent,
     LoginComponent,
     LogoutComponent,
-    UploadComponent
+    UploadComponent,
+    FooterComponent,
+    SidenavComponent
   ],
   imports: [
     BrowserModule,
