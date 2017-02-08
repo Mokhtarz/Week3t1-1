@@ -15,6 +15,7 @@ import {LoginService} from "./services/login.service";
 import { UploadComponent } from './upload/upload.component';
 import { FooterComponent } from './footer/footer.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
+import { MediaPlayerComponent } from './media-player/media-player.component';
 
 
 const routeConfig = [
@@ -46,6 +47,10 @@ const routeConfig = [
   {
     path: 'sidenav',
     component: SidenavComponent
+  },
+  {
+    path: 'media-player/:fileid',
+    component: MediaPlayerComponent
   }
 ];
 
@@ -59,7 +64,8 @@ const routeConfig = [
     LogoutComponent,
     UploadComponent,
     FooterComponent,
-    SidenavComponent
+    SidenavComponent,
+    MediaPlayerComponent
   ],
   imports: [
     BrowserModule,

@@ -20,6 +20,7 @@ export class FrontComponent implements OnInit {
 
     this.mediaService.getMedia().subscribe(
       res => {
+        console.log(res);
         this.images = res;
       }
     );
