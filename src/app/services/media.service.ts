@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { LoginService } from './login.service';
 import { Injectable } from '@angular/core';
 import { Http } from "@angular/http";
@@ -9,7 +10,7 @@ export class MediaService {
   private url: string = 'http://media.mw.metropolia.fi/wbma';
 
 
-  constructor(private http: Http, private loginService: LoginService) {
+  constructor(private http: Http, private loginService: LoginService, private router: Router) {
   }
 
 
@@ -28,6 +29,7 @@ export class MediaService {
       .map(
       resp => {
         resp.json();
+        this.router.navigate(['front']);
       },
       error => {
         console.log(error);
@@ -43,7 +45,14 @@ export class MediaService {
 
       );
 
+  }
 
+  getUserInfo = (userid: any) => {
+    return this.http.get(this.url + '/users/' + userid + '?token=' + JSON.parse(localStorage.getItem("user")).token )
+    .map(
+      re =>
+        re.json()
+    );
   }
 
 }

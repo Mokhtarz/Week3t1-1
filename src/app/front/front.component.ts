@@ -18,6 +18,8 @@ export class FrontComponent implements OnInit {
    // if(!this.loginService.logged)
      // this.router.navigate(['login']);
 
+     console.log (this.loginService.logged);
+
     this.mediaService.getMedia().subscribe(
       res => {
         console.log(res);
