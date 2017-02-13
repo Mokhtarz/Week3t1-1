@@ -1,24 +1,27 @@
 <main>
 <h3> Media file</h3>
-<div class="mediabox">
-<img  [src]="'http://media.mw.metropolia.fi/wbma/uploads/'+image.filename" style="width:150px" >
 
-<audio  controls>
-  <source [src]="'http://media.mw.metropolia.fi/wbma/uploads/'+image.filename" type="audio/ogg">
-  <source [src]="'http://media.mw.metropolia.fi/wbma/uploads/'+image.filename" type="audio/mpeg">
-  Your browser does not support the audio tag.
-</audio>
 
-<video  width="320" height="240" controls>
-  <source [src]="'http://media.mw.metropolia.fi/wbma/uploads/'+image.filename" type="video/mp4">
-  <source [src]="'http://media.mw.metropolia.fi/wbma/uploads/'+image.filename" type="video/ogg">
-  Your browser does not support the video tag.
-</video>
+<div *ngIf="file && user && favorite ">
+  <h3>{{ file.title }}</h3>
+  <img *ngIf="file.media_type == 'image'" [alt]="file.title" [src]='url + file.filename'/>
+  <audio *ngIf="file.media_type == 'audio'" controls>
+    <source [src]='url + file.filename' [type]="file.mime_type">
+    Your browser does not support the audio element.
+  </audio>
+  <video *ngIf="file.media_type == 'video'" width="320" height="240" controls>
+    <source [src]='url + file.filename' [type]="file.mime_type">
+    Your browser does not support the video tag.
+  </video>
+  
+  <p>Description: {{ file.description }}</p>
+  <p>Username: {{ user.username }}</p>
+  <p>File size: {{ file.filesize }}</p>
 
-<p class="title">{{image.title}} </p>
-<p class="description">{{image.description}} </p>
-<p class="user">{{user}} </p>
-
+  <p>Liked: {{ favorite.length }}</p>
+ 
+  <button *ngIf="!likes" (click)="likeMedia()"  >Like this Media</button>
+  <button *ngIf="likes" (click)="dislikeMedia()" >Dislike this Media</button>
 
 </div>
 

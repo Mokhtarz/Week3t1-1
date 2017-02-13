@@ -12,6 +12,7 @@ export class FrontComponent implements OnInit {
 
   private images: any = [];
 
+  private url = "http://media.mw.metropolia.fi/wbma/uploads/";
   constructor(private loginService: LoginService, private router: Router, private mediaService: MediaService) { }
 
   ngOnInit() {

@@ -16,6 +16,7 @@ import { UploadComponent } from './upload/upload.component';
 import { FooterComponent } from './footer/footer.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { MediaPlayerComponent } from './media-player/media-player.component';
+import { ThumbnailPipe } from './pipes/thumbnail.pipe';
 
 
 const routeConfig = [
@@ -65,7 +66,8 @@ const routeConfig = [
     UploadComponent,
     FooterComponent,
     SidenavComponent,
-    MediaPlayerComponent
+    MediaPlayerComponent,
+    ThumbnailPipe
   ],
   imports: [
     BrowserModule,
